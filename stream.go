@@ -3,12 +3,12 @@ package goodgame
 import "fmt"
 
 type StreamsPaginate struct {
-	Links 	   LinksPaginate `json:"_links,omitempty"`
-	Embedded   Streams 		 `json:"_embedded,omitempty"`
-	PageCount  int 			 `json:"page_count,omitempty"`
-	PageSize   int 			 `json:"page_size,omitempty"`
-	TotalItems int 			 `json:"total_items,omitempty"`
-	Page 	   int 			 `json:"page,omitempty"`
+	Links      LinksPaginate `json:"_links,omitempty"`
+	Embedded   Streams       `json:"_embedded,omitempty"`
+	PageCount  int           `json:"page_count,omitempty"`
+	PageSize   int           `json:"page_size,omitempty"`
+	TotalItems int           `json:"total_items,omitempty"`
+	Page       int           `json:"page,omitempty"`
 }
 
 type Streams struct {
@@ -16,41 +16,41 @@ type Streams struct {
 }
 
 type Channel struct {
-	ID 			int      `json:"id,omitempty"`
-	Key 		string   `json:"key,omitempty"`
-	Premium 	string   `json:"premium,omitempty"`
-	Title 		string   `json:"title,omitempty"`
-	MaxViewers  int 	 `json:"max_viewers,omitempty"`
+	ID          int      `json:"id,omitempty"`
+	Key         string   `json:"key,omitempty"`
+	Premium     string   `json:"premium,omitempty"`
+	Title       string   `json:"title,omitempty"`
+	MaxViewers  int      `json:"max_viewers,omitempty"`
 	PlayerType  string   `json:"player_type,omitempty"`
 	GGPlayerSrc string   `json:"gg_player_src,omitempty"`
-	Embed 		string   `json:"embed,omitempty"`
-	Img 		string   `json:"img,omitempty"`
-	Thumb 		string   `json:"thumb,omitempty"`
+	Embed       string   `json:"embed,omitempty"`
+	Img         string   `json:"img,omitempty"`
+	Thumb       string   `json:"thumb,omitempty"`
 	Description string   `json:"description,omitempty"`
-	Adult 		bool     `json:"adult,omitempty"`
-	Games 		[]SGames `json:"games,omitempty"`
-	Url 		string   `json:"url,omitempty"`
+	Adult       bool     `json:"adult,omitempty"`
+	Games       []SGames `json:"games,omitempty"`
+	Url         string   `json:"url,omitempty"` // TODO: создать отдельный c анмаршалингом
 }
 
 type SGames struct {
 	Title string `json:"title,omitempty"`
-	Url	  string `json:"url,omitempty"`
+	Url   string `json:"url,omitempty"`
 }
 
 type Stream struct {
-	RequestKey 		 string  	 `json:"request_key,omitempty"`
-	ID 				 int 	 	 `json:"id,omitempty"`
-	Key 			 string	 	 `json:"key,omitempty"`
-	IsBroadcast 	 bool 	 	 `json:"is_broadcast,omitempty"`
-	BroadcastStarted int 	 	 `json:"broadcast_started,omitempty"`
-	BroadcastEnd 	 int 	 	 `json:"broadcast_end,omitempty"`
-	Url 			 string  	 `json:"url,omitempty"`
-	Status 			 string  	 `json:"status,omitempty"`
-	Viewers 		 string  	 `json:"viewers,omitempty"`
-	PlayerViewers 	 string  	 `json:"player_viewers,omitempty"`
-	UserInChat 		 string  	 `json:"users_in_chat,omitempty"`
-	Channel 		 Channel 	 `json:"channel,omitempty"`
-	Links 	   		 LinksSingle `json:"_links,omitempty"`
+	RequestKey       string      `json:"request_key,omitempty"`
+	ID               int         `json:"id,omitempty"`
+	Key              string      `json:"key,omitempty"`
+	IsBroadcast      bool        `json:"is_broadcast,omitempty"`
+	BroadcastStarted int         `json:"broadcast_started,omitempty"`
+	BroadcastEnd     int         `json:"broadcast_end,omitempty"`
+	Url              string      `json:"url,omitempty"`
+	Status           string      `json:"status,omitempty"`
+	Viewers          string      `json:"viewers,omitempty"`
+	PlayerViewers    string      `json:"player_viewers,omitempty"`
+	UserInChat       string      `json:"users_in_chat,omitempty"`
+	Channel          Channel     `json:"channel,omitempty"`
+	Links            LinksSingle `json:"_links,omitempty"`
 }
 
 type StreamRequest struct {
@@ -58,12 +58,12 @@ type StreamRequest struct {
 }
 
 type StreamOptions struct {
-	IDs    string  `url:"ids,omitempty"`
-	Page   int 	   `url:"page,omitempty"`
-	OnlyGG bool    `url:"only_gg,omitempty"`
-	Adult  bool    `url:"adult,omitempty"`
-	Game   string  `url:"game,omitempty"`
-	Hidden bool    `url:"hidden,omitempty"`
+	IDs    string `url:"ids,omitempty"`
+	Page   int    `url:"page,omitempty"`
+	OnlyGG bool   `url:"only_gg,omitempty"`
+	Adult  bool   `url:"adult,omitempty"`
+	Game   string `url:"game,omitempty"`
+	Hidden bool   `url:"hidden,omitempty"`
 }
 
 // Получение информации о трансляциях

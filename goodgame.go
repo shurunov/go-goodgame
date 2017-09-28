@@ -1,15 +1,15 @@
 package goodgame
 
 import (
-	"net/http"
 	"encoding/json"
 	"github.com/google/go-querystring/query"
+	"net/http"
 	"net/url"
 )
 
 type Client struct {
 	client *http.Client
-	url	   *url.URL
+	url    *url.URL
 	Stream *StreamRequest
 	Game   *GameRequest
 }
@@ -17,12 +17,12 @@ type Client struct {
 const apiUrl = "http://api2.goodgame.ru/v2/"
 
 // Создание нового клиента для работы с API сервиса
-func NewClient() *Client  {
+func NewClient() *Client {
 	c := &Client{client: &http.Client{}}
 
 	c.url, _ = url.Parse(apiUrl)
 	c.Stream = &StreamRequest{client: c}
-	c.Game   = &GameRequest{client: c}
+	c.Game = &GameRequest{client: c}
 
 	return c
 }

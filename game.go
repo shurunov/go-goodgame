@@ -3,12 +3,12 @@ package goodgame
 import "fmt"
 
 type GamesPaginate struct {
-	Links 	   LinksPaginate `json:"_links,omitempty"`
-	Embedded   Games 		 `json:"_embedded,omitempty"`
-	PageCount  int 			 `json:"page_count,omitempty"`
-	PageSize   int 			 `json:"page_size,omitempty"`
-	TotalItems int 			 `json:"total_items,omitempty"`
-	Page 	   int 			 `json:"page,omitempty"`
+	Links      LinksPaginate `json:"_links,omitempty"`
+	Embedded   Games         `json:"_embedded,omitempty"`
+	PageCount  int           `json:"page_count,omitempty"`
+	PageSize   int           `json:"page_size,omitempty"`
+	TotalItems int           `json:"total_items,omitempty"`
+	Page       int           `json:"page,omitempty"`
 }
 
 type Games struct {
@@ -16,16 +16,16 @@ type Games struct {
 }
 
 type Game struct {
-	ID	   string  	   `json:"id,omitempty"`
-	Title  string  	   `json:"title,omitempty"`
-	Url	   string  	   `json:"url,omitempty"`
-	Short  string  	   `json:"short,omitempty"`
-	Poster string  	   `json:"poster,omitempty"`
+	ID     string      `json:"id,omitempty"`
+	Title  string      `json:"title,omitempty"`
+	Url    string      `json:"url,omitempty"` // TODO: создать отдельный c анмаршалингом
+	Short  string      `json:"short,omitempty"`
+	Poster string      `json:"poster,omitempty"`
 	Links  LinksSingle `json:"_links,omitempty"`
 }
 
 type GameOptions struct {
-	Page   int 	  `url:"page,omitempty"`
+	Page   int    `url:"page,omitempty"`
 	Filter string `url:"filter,omitempty"`
 }
 
