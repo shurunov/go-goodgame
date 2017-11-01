@@ -13,6 +13,7 @@ type Client struct {
 	Stream *StreamRequest
 	Game   *GameRequest
 	Smile  *SmileRequest
+	Player *PlayerRequest
 }
 
 const apiUrl = "http://api2.goodgame.ru/v2/"
@@ -25,6 +26,7 @@ func NewClient() *Client {
 	c.Stream = &StreamRequest{client: c}
 	c.Game = &GameRequest{client: c}
 	c.Smile = &SmileRequest{client: c}
+	c.Player = &PlayerRequest{client: c}
 
 	return c
 }
